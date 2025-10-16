@@ -1,5 +1,5 @@
 export type TPatient = {
-  id: string;
+  patient_id: string;
   name?: string;
   age?: number;
   blood_pressure?: string;
@@ -26,4 +26,10 @@ export type TResponse = {
   data: TPatient[];
   pagination: TPagination;
   metadata: TMetadata;
+};
+
+export type TOutput = {
+  high_risk_patients: string[];
+  fever_patients: string[];
+  data_quality_issues: string[];
 };
