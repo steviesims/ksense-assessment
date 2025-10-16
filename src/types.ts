@@ -1,4 +1,4 @@
-type TPatient = {
+export type TPatient = {
   id: string;
   name?: string;
   age?: number;
@@ -7,7 +7,7 @@ type TPatient = {
   [key: string]: any;
 };
 
-type TPagination = {
+export type TPagination = {
   page: number;
   limit: number;
   total: number;
@@ -16,13 +16,13 @@ type TPagination = {
   hasPrevious: boolean;
 };
 
-type TMetadata = {
+export type TMetadata = {
   timestamp: string;
   requestId: string;
   version: string;
 };
 
-type TResponse = {
+export type TResponse = {
   data: TPatient[];
   pagination: TPagination;
   metadata: TMetadata;
