@@ -27,10 +27,10 @@ This API simulates real-world conditions:
 
 **_Note: If systolic and diastolic readings fall into different risk categories, use the higher risk stage for scoring._**
 
-Normal (Systolic <120 AND Diastolic <80): 1 points<br>
-Elevated (Systolic 120‑129 AND Diastolic <80): 2 points<br>
-Stage 1 (Systolic 130‑139 OR Diastolic 80‑89): 3 points<br>
-Stage 2 (Systolic ≥140 OR Diastolic ≥90): 4 points<br>
+Normal (Systolic <120 AND Diastolic <80): 0 points<br>
+Elevated (Systolic 120‑129 AND Diastolic <80): 1 points<br>
+Stage 1 (Systolic 130‑139 OR Diastolic 80‑89): 2 points<br>
+Stage 2 (Systolic ≥140 OR Diastolic ≥90): 3 points<br>
 Invalid/Missing Data (0 points):<br>
 • Missing systolic or diastolic values (e.g., "150/" or "/90")<br>
 • Non-numeric values (e.g., "INVALID", "N/A")<br>
@@ -47,7 +47,7 @@ Invalid/Missing Data (0 points):<br>
 
 #### Age Risk
 
-Under 40 (<40 years): 1 points<br>
+Under 40 (<40 years): 0 points<br>
 40-65 (40-65 years, inclusive): 1 point<br>
 Over 65 (>65 years): 2 points<br>
 Invalid/Missing Data (0 points):<br>
@@ -58,9 +58,8 @@ Total Risk Score = (BP Score) + (Temp Score) + (Age Score)
 
 ## Required Outputs
 
-Your solution should be able to produce these outputs based on your data analysis.
-
 Alert Lists: Your system should identify patients who meet specific criteria:
-High-Risk Patients: Patient IDs with total risk score ≥ 4
-Fever Patients: Patient IDs with temperature ≥ 99.6°F
-Data Quality Issues: Patient IDs with invalid/missing data (e.g., BP, Age, or Temp is missing/malformed)
+
+- High-Risk Patients: Patient IDs with total risk score ≥ 4
+- Fever Patients: Patient IDs with temperature ≥ 99.6°F
+- Data Quality Issues: Patient IDs with invalid/missing data (e.g., BP, Age, or Temp is missing/malformed)
